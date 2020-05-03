@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                //
+            }
+        }
+        stage('Test Connection 1') {
+            steps {
+                sh 'ssh root@192.168.10.251 \'ifconfig\''
+            }
+        }
+        stage('Test Connection 2') { 
+            steps {
+                sh 'ssh root@192.168.10.252 \'ifconfig\''
+            }
+        }
+    }
+}
